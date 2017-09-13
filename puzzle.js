@@ -93,55 +93,82 @@ document.addEventListener( "keydown", event => {
 		playerDrop();
 	} else if(event.keyCode === 32) {       //space bar
 		cancelAnimationFrame( splashAnimationFrameId );
-		//put a level screen
+		//gameLevel = 1;
+		if(gameLevel > totalLevel) {
+			document.removeEventListener("keydown",arguments.callee,false);
+		}
 		draw();
 		audioPlayer.src = startSoundURL;
 		audioPlayer.play();
 		drawScreenInterval("Chapter: " + gameLevel);
 		setTimeout('draw()', 1000);
 	} else if(event.keyCode === 84) {       // T button
+		if(gameLevel > totalLevel) {
+			document.removeEventListener("keydown",arguments.callee,false);
+		}
 		player.pos.x = 21;
 		player.pos.y = 0;
 		piece = 'T';
 		player.matrix = createPiece(piece);
 		updatePiecesAnimationFrameId = updatePieces();
 	} else if(event.keyCode === 79) {       // O button
+		if(gameLevel > totalLevel) {
+			document.removeEventListener("keydown",arguments.callee,false);
+		}
 		player.pos.x = 21;
 		player.pos.y = 0;
 		piece = 'O';
 		player.matrix = createPiece(piece);
 		updatePiecesAnimationFrameId = updatePieces();
 	} else if(event.keyCode === 76) {       // L button
+		if(gameLevel > totalLevel) {
+			document.removeEventListener("keydown",arguments.callee,false);
+		}
 		player.pos.x = 21;
 		player.pos.y = 0;
 		piece = 'L';
 		player.matrix = createPiece(piece);
 		updatePiecesAnimationFrameId = updatePieces();
 	} else if(event.keyCode === 73) {       // I button
+		if(gameLevel > totalLevel) {
+			document.removeEventListener("keydown",arguments.callee,false);
+		}
 		player.pos.x = 21;
 		player.pos.y = 0;
 		piece = 'I';
 		player.matrix = createPiece(piece);
 		updatePiecesAnimationFrameId = updatePieces();
 	} else if(event.keyCode === 74) {       // J button
+		if(gameLevel > totalLevel) {
+			document.removeEventListener("keydown",arguments.callee,false);
+		}
 		player.pos.x = 21;
 		player.pos.y = 0;
 		piece = 'J';
 		player.matrix = createPiece(piece);
 		updatePiecesAnimationFrameId = updatePieces();
 	} else if(event.keyCode === 83) {       // S button
+		if(gameLevel > totalLevel) {
+			document.removeEventListener("keydown",arguments.callee,false);
+		}
 		player.pos.x = 21;
 		player.pos.y = 0;
 		piece = 'S';
 		player.matrix = createPiece(piece);
 		updatePiecesAnimationFrameId = updatePieces();
 	} else if(event.keyCode === 90) {       // Z button
+		if(gameLevel > totalLevel) {
+			document.removeEventListener("keydown",arguments.callee,false);
+		}
 		player.pos.x = 21;
 		player.pos.y = 0;
 		piece = 'Z';
 		player.matrix = createPiece(piece);
 		updatePiecesAnimationFrameId = updatePieces();
 	} else if(event.keyCode === 82) {      // R button
+		if(gameLevel > totalLevel) {
+			document.removeEventListener("keydown",arguments.callee,false);
+		}
 		platform = createLevel(gameLevel);
 		arena = createMatrix(42, 44, 0);
 		//reset splash may be given
