@@ -16,7 +16,7 @@ let updatePiecesAnimationFrameId;
 let gameLevel = 1;
 let platform = createLevel(gameLevel);
 let arena = createMatrix(42, 44, 0);
-let totalLevel = 5;
+let totalLevel = 9;
 
 let requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
                             window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
@@ -60,36 +60,301 @@ function createLevel(level) {
 	let platform;
 	if( level === 1) {
 		platform = createMatrix(48, 20, 1);
+		//T
 		platform[0][7] = platform[0][8] = platform[0][9] = platform[1][8] = 0;
-		platform[0][15] = platform[0][16] = platform[0][17] = platform[1][16] = 0;
+		//I
+		platform[0][21] = platform[0][22] = platform[1][21] = platform[1][22] = 0;
+		platform[0][37] = platform[1][37] = platform[2][37] = platform[3][37] = 0;
 
 		return platform;
 
 	} else if( level === 2) {
 		platform = createMatrix(48, 20, 1);
+		//O
 		platform[0][20] = platform[0][21] = 0;
 		platform[1][20] = platform[1][21] = 0;
+		//O
+		platform[0][23] = platform[0][24] = 0;
+		platform[1][23] = platform[1][24] = 0;
+		//I
+		platform[0][7] = platform[1][7] = platform[2][7] = platform[3][7] = 0;
+		platform[0][37] = platform[1][37] = platform[2][37] = platform[3][37] = 0;
 
 		return platform;
+
 	} else if( level === 3) {
 		platform = createMatrix(48, 20, 1);
-		platform[0][20] = platform[0][21] = 0;
-		platform[1][20] = platform[1][21] = 0;
+		//I
+		platform[0][17] = platform[1][17] = platform[2][17] = platform[3][17] = 0;
+		platform[4][17] = platform[5][17] = platform[6][17] = platform[7][17] = 0;
+		platform[8][17] = platform[9][17] = platform[10][17] = platform[11][17] = 0;
+		platform[12][17] = platform[13][17] = platform[14][17] = platform[15][17] = 0;
+		//I
+		platform[0][25] = platform[1][25] = platform[2][25] = platform[3][25] = 0;
+		platform[4][25] = platform[5][25] = platform[6][25] = platform[7][25] = 0;
+		platform[8][25] = platform[9][25] = platform[10][25] = platform[11][25] = 0;
+		platform[12][25] = platform[13][25] = platform[14][25] = platform[15][25] = 0;
+		//O
+		platform[0][15] = platform[0][16] = 0;
+		platform[1][15] = platform[1][16] = 0;
+
+		platform[0][26] = platform[0][27] = 0;
+		platform[1][26] = platform[1][27] = 0;
 
 		return platform;
+
 	} else if( level === 4) {
 		platform = createMatrix(48, 20, 1);
-		platform[0][20] = platform[0][21] = 0;
-		platform[1][20] = platform[1][21] = 0;
+		//O
+		platform[0][15] = platform[0][16] = 0;
+		platform[1][15] = platform[1][16] = 0;
+		platform[2][15] = platform[2][16] = 0;
+		platform[3][15] = platform[3][16] = 0;
+		platform[4][15] = platform[4][16] = 0;
+		platform[5][15] = platform[5][16] = 0;
+		platform[6][15] = platform[6][16] = 0;
+		platform[7][15] = platform[7][16] = 0;
+		platform[8][15] = platform[8][16] = 0;
+		platform[9][15] = platform[9][16] = 0;
+		platform[10][15] = platform[10][16] = 0;
+		platform[11][15] = platform[11][16] = 0;
+		platform[12][15] = platform[12][16] = 0;
+		platform[13][15] = platform[13][16] = 0;
+		platform[14][15] = platform[14][16] = 0;
+		platform[15][15] = platform[15][16] = 0;
+
+		//O
+		platform[0][26] = platform[0][27] = 0;
+		platform[1][26] = platform[1][27] = 0;
+		platform[2][26] = platform[2][27] = 0;
+		platform[3][26] = platform[3][27] = 0;
+		platform[4][26] = platform[4][27] = 0;
+		platform[5][26] = platform[5][27] = 0;
+		platform[6][26] = platform[6][27] = 0;
+		platform[7][26] = platform[7][27] = 0;
+		platform[8][26] = platform[8][27] = 0;
+		platform[9][26] = platform[9][27] = 0;
+		platform[10][26] = platform[10][27] = 0;
+		platform[11][26] = platform[11][27] = 0;
+		platform[12][26] = platform[12][27] = 0;
+		platform[13][26] = platform[13][27] = 0;
+		platform[14][26] = platform[14][27] = 0;
+		platform[15][26] = platform[15][27] = 0;
+
+		//T
+		platform[0][20] = platform[0][21] = platform[0][22] = platform[1][21] = 0;
+		//I
+		platform[2][21] = platform[3][21] = platform[4][21] = platform[5][21] = 0;
 
 		return platform;
+
 	} else if( level === 5) {
 		platform = createMatrix(48, 20, 1);
-		platform[0][20] = platform[0][21] = 0;
-		platform[1][20] = platform[1][21] = 0;
+
+		//L
+		platform[0][9] = platform[1][9] = platform[2][9] = platform[2][10] = 0;
+		platform[0][33] = platform[1][33] = platform[2][33] = platform[2][32] = 0;
+
+		//O
+		platform[0][10] = platform[0][11] = 0;
+		platform[1][10] = platform[1][11] = 0;
+		platform[0][31] = platform[0][32] = 0;
+		platform[1][31] = platform[1][32] = 0;
 
 		return platform;
-	} 
+
+	}	else if( level === 6 ) {
+		platform = createMatrix(48, 20, 1);
+
+		platform = createMatrix(48, 20, 1);
+
+		//L
+		platform[4][9] = platform[5][9] = platform[6][9] = platform[6][10] = 0;
+		platform[4][33] = platform[5][33] = platform[6][33] = platform[6][32] = 0;
+
+		//O
+		platform[0][10] = platform[0][11] = 0;
+		platform[1][10] = platform[1][11] = 0;
+		platform[2][10] = platform[2][11] = 0;
+		platform[3][10] = platform[3][11] = 0;
+		platform[4][10] = platform[4][11] = 0;
+		platform[5][10] = platform[5][11] = 0;
+
+		platform[0][31] = platform[0][32] = 0;
+		platform[1][31] = platform[1][32] = 0;
+		platform[2][31] = platform[2][32] = 0;
+		platform[3][31] = platform[3][32] = 0;
+		platform[4][31] = platform[4][32] = 0;
+		platform[5][31] = platform[5][32] = 0;
+
+		//I
+		platform[0][9] = platform[1][9] = platform[2][9] = platform[3][9] = 0;
+		platform[0][33] = platform[1][33] = platform[2][33] = platform[3][33] = 0;
+
+		return platform;
+
+	} else if( level === 7 ) {
+		platform = createMatrix(48, 20, 1);
+
+		//O
+		platform[0][10] = platform[0][11] = 0;
+		platform[1][10] = platform[1][11] = 0;
+		platform[0][12] = platform[0][13] = 0;
+		platform[1][12] = platform[1][13] = 0;
+		//T
+		platform[2][11] = platform[2][12] = platform[2][13] = platform[3][12] = 0;
+		platform[0][31] = platform[0][32] = platform[0][33] = platform[1][32] = 0;
+		platform[0][36] = platform[0][37] = platform[0][38] = platform[1][37] = 0;
+		//I
+		platform[2][32] = platform[3][32] = platform[4][32] = platform[5][32] = 0;
+		platform[2][37] = platform[3][37] = platform[4][37] = platform[5][37] = 0;
+		platform[6][32] = platform[7][32] = platform[8][32] = platform[9][32] = 0;
+		platform[6][37] = platform[7][37] = platform[8][37] = platform[9][37] = 0;
+		//O
+		platform[0][34] = platform[0][35] = 0;
+		platform[1][34] = platform[1][35] = 0;
+		platform[2][34] = platform[2][35] = 0;
+		platform[3][34] = platform[3][35] = 0;
+		platform[4][34] = platform[4][35] = 0;
+		platform[5][34] = platform[5][35] = 0;
+		platform[6][34] = platform[6][35] = 0;
+		platform[7][34] = platform[7][35] = 0;
+		platform[8][34] = platform[8][35] = 0;
+		platform[9][34] = platform[9][35] = 0;
+
+		return platform;
+
+	} else if( level === 8 ) {
+		platform = createMatrix(48, 20, 1);
+		//L
+		platform[0][10] = platform[1][10] = platform[2][10] = platform[2][11] = 0;
+		platform[0][33] = platform[1][33] = platform[2][33] = platform[2][34] = 0;
+
+		//J
+		platform[0][13] = platform[1][13] = platform[2][13] = platform[2][12] = 0;
+		platform[0][36] = platform[1][36] = platform[2][36] = platform[2][35] = 0;
+
+		//O
+		platform[0][11] = platform[0][12] = 0;
+		platform[1][11] = platform[1][12] = 0;
+		platform[0][34] = platform[0][35] = 0;
+		platform[1][34] = platform[1][35] = 0;
+
+		platform[0][18] = platform[0][19] = 0;
+		platform[1][18] = platform[1][19] = 0;
+		platform[0][23] = platform[0][24] = 0;
+		platform[1][23] = platform[1][24] = 0;
+
+		//T
+		platform[0][20] = platform[0][21] = platform[0][22] = platform[1][21] = 0;
+		//I
+		platform[1][20] = platform[2][20] = platform[3][20] = platform[4][20] = 0;
+		platform[5][20] = platform[6][20] = platform[7][20] = platform[8][20] = 0;
+		platform[9][20] = platform[10][20] = platform[11][20] = platform[12][20] = 0;
+
+		platform[1][22] = platform[2][22] = platform[3][22] = platform[4][22] = 0;
+		platform[5][22] = platform[6][22] = platform[7][22] = platform[8][22] = 0;
+		platform[9][22] = platform[10][22] = platform[11][22] = platform[12][22] = 0;
+
+		platform[0][4] = platform[1][4] = platform[2][4] = platform[3][4] = 0;
+		platform[4][4] = platform[5][4] = platform[6][4] = platform[7][4] = 0;
+		platform[8][4] = platform[9][4] = platform[10][4] = platform[11][4] = 0;
+		platform[12][4] = platform[13][4] = platform[14][4] = platform[15][4] = 0;
+
+		platform[0][43] = platform[1][43] = platform[2][43] = platform[3][43] = 0;
+		platform[4][43] = platform[5][43] = platform[6][43] = platform[7][43] = 0;
+		platform[8][43] = platform[9][43] = platform[10][43] = platform[11][43] = 0;
+		platform[12][43] = platform[13][43] = platform[14][43] = platform[15][43] = 0;		
+
+
+		return platform;
+
+	} else if( level === 9 ) {
+		platform = createMatrix(48, 20, 1);
+
+			//O
+		platform[0][11] = platform[0][12] = 0;
+		platform[1][11] = platform[1][12] = 0;
+		platform[2][11] = platform[2][12] = 0;
+		platform[3][11] = platform[3][12] = 0;
+		platform[4][11] = platform[4][12] = 0;
+		platform[5][11] = platform[5][12] = 0;
+		platform[6][11] = platform[6][12] = 0;
+		platform[7][11] = platform[7][12] = 0;
+		platform[8][11] = platform[8][12] = 0;
+		platform[9][11] = platform[9][12] = 0;
+		platform[10][11] = platform[10][12] = 0;
+		platform[11][11] = platform[11][12] = 0;
+		platform[12][11] = platform[12][12] = 0;
+		platform[13][11] = platform[13][12] = 0;
+		platform[14][11] = platform[14][12] = 0;
+		platform[15][11] = platform[15][12] = 0;
+
+		platform[0][34] = platform[0][35] = 0;
+		platform[1][34] = platform[1][35] = 0;
+		platform[2][34] = platform[2][35] = 0;
+		platform[3][34] = platform[3][35] = 0;
+		platform[4][34] = platform[4][35] = 0;
+		platform[5][34] = platform[5][35] = 0;
+		platform[6][34] = platform[6][35] = 0;
+		platform[7][34] = platform[7][35] = 0;
+		platform[8][34] = platform[8][35] = 0;
+		platform[9][34] = platform[9][35] = 0;
+		platform[10][34] = platform[10][35] = 0;
+		platform[11][34] = platform[11][35] = 0;
+		platform[12][34] = platform[12][35] = 0;
+		platform[13][34] = platform[13][35] = 0;
+		platform[14][34] = platform[14][35] = 0;
+		platform[15][34] = platform[15][35] = 0;
+
+
+		//I
+		platform[12][10] = platform[13][10] = platform[14][10] = platform[15][10] = 0;
+		platform[8][10] = platform[9][10] = platform[10][10] = platform[11][10] = 0;
+		platform[4][10] = platform[5][10] = platform[6][10] = platform[7][10] = 0;
+		platform[0][10] = platform[1][10] = platform[2][10] = platform[3][10] = 0;
+
+		platform[12][13] = platform[13][13] = platform[14][13] = platform[15][13] = 0;
+		platform[8][13] = platform[9][13] = platform[10][13] = platform[11][13] = 0;
+		platform[4][13] = platform[5][13] = platform[6][13] = platform[7][13] = 0;
+		platform[0][13] = platform[1][13] = platform[2][13] = platform[3][13] = 0;
+
+		platform[12][33] = platform[13][33] = platform[14][33] = platform[15][33] = 0;
+		platform[8][33] = platform[9][33] = platform[10][33] = platform[11][33] = 0;
+		platform[4][33] = platform[5][33] = platform[6][33] = platform[7][33] = 0;
+		platform[0][33] = platform[1][33] = platform[2][33] = platform[3][33] = 0;
+
+		platform[12][36] = platform[13][36] = platform[14][36] = platform[15][36] = 0;
+		platform[8][36] = platform[9][36] = platform[10][36] = platform[11][36] = 0;
+		platform[4][36] = platform[5][36] = platform[6][36] = platform[7][36] = 0;
+		platform[0][36] = platform[1][36] = platform[2][36] = platform[3][36] = 0;
+
+
+
+
+		return platform;
+		
+	} /*else if( level === 10 ) {
+		platform = createMatrix(48, 20, 1);
+
+		return platform;
+		
+	} else if( level === 11 ) {
+		platform = createMatrix(48, 20, 1);
+
+		return platform;
+		
+	} else if( level === 12 ) {
+		platform = createMatrix(48, 20, 1);
+
+		return platform;
+		
+	} else if( level === 13 ) {
+		platform = createMatrix(48, 20, 1);
+
+		return platform;
+		
+	}*/
 }
 
 
@@ -294,7 +559,7 @@ function drawSplash(color) {
 	context.fillStyle = "#fff";
 
 	context.font = "2.2pt Cornerstone";
-	context.fillText("Piku Meets Chiku", 11, 15);
+	context.fillText("Reunion", 16, 15);
 
 	context.font = "1.2pt Cornerstone"
 	context.fillText("Build the road and help", 14, 22);
